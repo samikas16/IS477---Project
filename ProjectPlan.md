@@ -58,32 +58,41 @@ Finally, the two datasets can be linked using geographic information such as sta
 
 **Timeline:**
 
-Week 1
+Week 1:
+
 Set up the GitHub repository and finalize the team. (Both)
 
-Week 2
+Week 2:
+
 Finalize research questions, confirm the datasets, come up with a project plan. Download the datasets and review their documentation to understand the variables and structure. (Both)
 
-Week 3
+Week 3:
+
 Download the datasets and review their documentation to understand the variables and structure and they would fit in with our questions. (Both)
 
-Week 4
+Week 4:
+
 Clean the datasets by handling missing values and outliers, then we would merge the datasets based on the common factors and what we are trying to explore. (Sreeja)
 
-Week 5
+Week 5:
+
 Perform data analysis on the new dataset and create visualizations and descriptive statistics. (Samika)
 
-Week 6
+Week 6:
+
 Continue examining possible relationships from our questions, and possibly start coming up with answers to our questions. (Both)
 
-Week 7
+Week 7:
+
 Start writing the analysis section of the report. (Both)
 
-Week 8 (Assuming this is due week before finals week)
+Week 8 (Assuming this is due week before finals week):
+
 Review and finish our report, update GitHub repository, and submit the final project. (Both)
 
 
 **Constraints/Gaps:**
+
 There are a few constraints that could affect our project. One issue is that crime reporting practices can vary between different law enforcement agencies. Some crimes can be underreported or classified differently, which could affect the accuracy of the data.
 Another limitation in our other dataset is that air quality monitoring are in every city. This means that some areas may have limited pollution data available. There could also be differences in how geographic boundaries are defined in the datasets. For example, crime data might only be reported by the city or police agency, while pollution data may be recorded at the county level. Because of this, we may need to adjust geographic information so the datasets can be merged properly. Finally, even if we find a relationship between pollution levels and crime rates, this doesn’t automatically mean that one causes the other (Correlation doesn’t imply causation). A lot of other factors could influence both crime and environmental conditions.
 
