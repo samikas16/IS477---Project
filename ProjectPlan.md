@@ -11,3 +11,4 @@ After the data is merged, we will begin exploring it to see what patterns appear
 The purpose of this project is not necessarily to prove that pollution causes crime, but instead to see whether any patterns exist between the two. By the end of the project, we hope to have a better understanding of how environmental and social factors may appear together in urban areas. This project will also give us experience working with real datasets, combining information from multiple sources, and using data analysis to answer research questions.
 
 
+
