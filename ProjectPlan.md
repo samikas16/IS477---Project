@@ -13,8 +13,21 @@ The purpose of this project is not necessarily to prove that pollution causes cr
 **Team:**
 
 Our team consists of two members, Sreeja and Samika.
+
 Sreeja will focus mainly on finding and preparing the datasets. This includes locating the datasets from reliable sources, downloading them, and reading through the documentation to understand how the data is organized. Sreeja will also clean the data by handling missing values, fixing formatting issues, and making sure geographic information is consistent between the datasets. Preparing the data carefully is really important because it allows the datasets to be merged correctly later in the project.
+
 Samika will focus on combining the datasets and performing the analysis. After the data is cleaned, Samika will merge the crime dataset with the air quality dataset using shared geographic information such as state, county, and year. Once the datasets are combined, Samika will begin exploring the data to look for trends and patterns. This will include calculating summary statistics and creating visualizations such as charts that help show how crime rates and pollution levels compare across locations.
+
 We will also both contribute to the GitHub repository so that our individual work is visible through the commit history. This way, we can keep the project organized while making sure both of us contribute equally.
 
+**Questions:**
+
+The main purpose of this project is to explore possible relationships between air pollution and crime rates across cities in the United States.
+
+The first question we want to answer is whether there is a relationship between air pollution levels and crime rates. Can we see that cities with higher pollution levels also report higher crime rates?
+
+Our second question is how pollution levels are related to different types of crime. Different types of crime may show different patterns, so it will be interesting to see if one appears more strongly correlated to environmental conditions.
+
+Our third question was whether certain regions of the United States appear to have both higher pollution levels and how that impacts crime rates. Looking at different regional patterns may help us see whether location plays a role in these trends.
+Overall, these questions will guide our analysis and help us better understand any patterns in the data.
 
