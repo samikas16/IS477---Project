@@ -31,3 +31,19 @@ Our second question is how pollution levels are related to different types of cr
 Our third question was whether certain regions of the United States appear to have both higher pollution levels and how that impacts crime rates. Looking at different regional patterns may help us see whether location plays a role in these trends.
 Overall, these questions will guide our analysis and help us better understand any patterns in the data.
 
+**Datasets:**
+
+Dataset link:
+https://catalog.data.gov/dataset/uniform-crime-reporting-ucr-program
+This dataset has crime statistics reported by law enforcement agencies across the United States. It includes information about different types of crimes, such as violent crime and property crime, along with the population served by each reporting agency.
+Some of the important variables in this dataset include state, city or agency name, year, violent crime counts, property crime counts, and population.
+This dataset gives us the crime data that we will analyze and compare across different locations.
+The air quality dataset comes from the Air Quality System maintained by the United States Environmental Protection Agency.
+Dataset link:
+https://www.epa.gov/outdoor-air-quality-data
+This dataset has measurements of air pollution collected from monitoring stations across the country. It contains data on pollutants such as particulate matter, which is used to measure air pollution levels.
+Important variables include state, county, monitoring location, year, and pollution measurements such as PM2.5.
+This dataset will allow us to examine how pollution levels vary across different locations.
+Finally, the two datasets can be linked using geographic information such as state, county, and year. By matching records with the same identifiers, we will be able to create a merged dataset that contains both crime statistics and air pollution measurements for the same locations.
+
+
