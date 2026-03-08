@@ -33,17 +33,52 @@ Overall, these questions will guide our analysis and help us better understand a
 
 **Datasets:**
 
-Dataset link:
+The crime dataset comes from the Uniform Crime Reporting program managed by the Federal Bureau of Investigation.
+
+Dataset 1 link:
 https://catalog.data.gov/dataset/uniform-crime-reporting-ucr-program
+
 This dataset has crime statistics reported by law enforcement agencies across the United States. It includes information about different types of crimes, such as violent crime and property crime, along with the population served by each reporting agency.
 Some of the important variables in this dataset include state, city or agency name, year, violent crime counts, property crime counts, and population.
+
 This dataset gives us the crime data that we will analyze and compare across different locations.
+
 The air quality dataset comes from the Air Quality System maintained by the United States Environmental Protection Agency.
+
 Dataset link:
 https://www.epa.gov/outdoor-air-quality-data
+
 This dataset has measurements of air pollution collected from monitoring stations across the country. It contains data on pollutants such as particulate matter, which is used to measure air pollution levels.
+
 Important variables include state, county, monitoring location, year, and pollution measurements such as PM2.5.
+
 This dataset will allow us to examine how pollution levels vary across different locations.
+
 Finally, the two datasets can be linked using geographic information such as state, county, and year. By matching records with the same identifiers, we will be able to create a merged dataset that contains both crime statistics and air pollution measurements for the same locations.
 
+**Timeline:**
+
+Week 1
+Set up the GitHub repository and finalize the team. (Both)
+
+Week 2
+Finalize research questions, confirm the datasets, come up with a project plan. Download the datasets and review their documentation to understand the variables and structure. (Both)
+
+Week 3
+Download the datasets and review their documentation to understand the variables and structure and they would fit in with our questions. (Both)
+
+Week 4
+Clean the datasets by handling missing values and outliers, then we would merge the datasets based on the common factors and what we are trying to explore. (Sreeja)
+
+Week 5
+Perform data analysis on the new dataset and create visualizations and descriptive statistics. (Samika)
+
+Week 6
+Continue examining possible relationships from our questions, and possibly start coming up with answers to our questions. (Both)
+
+Week 7
+Start writing the analysis section of the report. (Both)
+
+Week 8 (Assuming this is due week before finals week)
+Review and finish our report, update GitHub repository, and submit the final project. (Both)
 
