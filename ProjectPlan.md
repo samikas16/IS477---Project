@@ -10,5 +10,11 @@ After the data is merged, we will begin exploring it to see what patterns appear
 
 The purpose of this project is not necessarily to prove that pollution causes crime, but instead to see whether any patterns exist between the two. By the end of the project, we hope to have a better understanding of how environmental and social factors may appear together in urban areas. This project will also give us experience working with real datasets, combining information from multiple sources, and using data analysis to answer research questions.
 
+**Team:**
+
+Our team consists of two members, Sreeja and Samika.
+Sreeja will focus mainly on finding and preparing the datasets. This includes locating the datasets from reliable sources, downloading them, and reading through the documentation to understand how the data is organized. Sreeja will also clean the data by handling missing values, fixing formatting issues, and making sure geographic information is consistent between the datasets. Preparing the data carefully is really important because it allows the datasets to be merged correctly later in the project.
+Samika will focus on combining the datasets and performing the analysis. After the data is cleaned, Samika will merge the crime dataset with the air quality dataset using shared geographic information such as state, county, and year. Once the datasets are combined, Samika will begin exploring the data to look for trends and patterns. This will include calculating summary statistics and creating visualizations such as charts that help show how crime rates and pollution levels compare across locations.
+We will also both contribute to the GitHub repository so that our individual work is visible through the commit history. This way, we can keep the project organized while making sure both of us contribute equally.
 
 
