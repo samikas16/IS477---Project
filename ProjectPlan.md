@@ -1,14 +1,14 @@
 **Overview:**
 
-The overall goal of this project is to explore whether environmental conditions, specifically air pollution levels, are related to crime rates in cities across the United States. Many cities deal with both environmental issues and social challenges at the same time. Because of this, we were interested in seeing whether there might be any patterns between pollution levels and crime statistics.
+The overall goal of this project is to explore whether air pollution levels, are related to crime rates in cities across the United States. Many cities deal with both environmental and social issues at the same time. Because of this, we were interested in seeing whether there might be any patterns between air pollution levels and crime statistics.
 
-To study this question, we plan to combine two different datasets. The first dataset contains crime statistics collected by the Federal Bureau of Investigation through the Uniform Crime Reporting program. This dataset includes information about violent crime, property crime, and the population served by different law enforcement agencies across the country. The second dataset comes from the United States Environmental Protection Agency Air Quality System, which tracks air pollution measurements across the United States.
+To study this question, we plan to combine two different datasets. The first dataset contains crime statistics collected by the Federal Bureau of Investigation through the Uniform Crime Reporting program. This dataset includes information about violent crime, property crime, and the population served by different law enforcement agencies across the country. The second dataset comes from the United States Environmental Protection Agency Air Quality System, which tracks air pollution measurements across the United States. We will only be using the data from 2025.
 
 These two datasets can be connected using shared geographic information such as state, county, and year. After collecting the datasets, we will clean the data and make sure the variables are consistent so they can be combined. Once the datasets are prepared, we will merge them into one dataset that allows us to compare crime statistics with air pollution levels.
 
-After the data is merged, we will begin exploring it to see what patterns appear. This will include calculating summary statistics and creating some visualizations such as charts and graphs. Finally, we will see whether higher pollution levels appear to be associated with higher crime rates in certain locations.
+After the data is merged, we will begin exploring it to see what patterns appear. This will include calculating summary statistics and creating some visualizations. Finally, we will see whether higher pollution levels appear to be associated with higher crime rates in certain locations.
 
-The purpose of this project is not necessarily to prove that pollution causes crime, but instead to see whether any patterns exist between the two. By the end of the project, we hope to have a better understanding of how environmental and social factors may appear together in urban areas. This project will also give us experience working with real datasets, combining information from multiple sources, and using data analysis to answer research questions.
+The purpose of this project is not to prove that pollution causes crime, but instead to see whether any patterns exist between the factors. By the end of the project, we hope to have a better understanding of how environmental and social factors may appear together in certain areas.
 
 **Team:**
 
@@ -28,14 +28,14 @@ The first question we want to answer is whether there is a relationship between 
 
 Our second question is how pollution levels are related to different types of crime. Different types of crime may show different patterns, so it will be interesting to see if one appears more strongly correlated to environmental conditions.
 
-Our third question was whether certain regions of the United States appear to have both higher pollution levels and how that impacts crime rates. Looking at different regional patterns may help us see whether location plays a role in these trends.
-Overall, these questions will guide our analysis and help us better understand any patterns in the data.
+Our third question was whether certain regions of the United States appear to have both higher pollution levels and how that impacts crime rates. 
 
 **Datasets:**
 
 The crime dataset comes from the Uniform Crime Reporting program managed by the Federal Bureau of Investigation.
 
 Dataset 1 link:
+
 https://catalog.data.gov/dataset/uniform-crime-reporting-ucr-program
 
 This dataset has crime statistics reported by law enforcement agencies across the United States. It includes information about different types of crimes, such as violent crime and property crime, along with the population served by each reporting agency.
@@ -45,7 +45,8 @@ This dataset gives us the crime data that we will analyze and compare across dif
 
 The air quality dataset comes from the Air Quality System maintained by the United States Environmental Protection Agency.
 
-Dataset link:
+Dataset 2 link:
+
 https://www.epa.gov/outdoor-air-quality-data
 
 This dataset has measurements of air pollution collected from monitoring stations across the country. It contains data on pollutants such as particulate matter, which is used to measure air pollution levels.
@@ -93,9 +94,8 @@ Review and finish our report, update GitHub repository, and submit the final pro
 
 **Constraints/Gaps:**
 
-There are a few constraints that could affect our project. One issue is that crime reporting practices can vary between different law enforcement agencies. Some crimes can be underreported or classified differently, which could affect the accuracy of the data.
-Another limitation in our other dataset is that air quality monitoring are in every city. This means that some areas may have limited pollution data available. There could also be differences in how geographic boundaries are defined in the datasets. For example, crime data might only be reported by the city or police agency, while pollution data may be recorded at the county level. Because of this, we may need to adjust geographic information so the datasets can be merged properly. Finally, even if we find a relationship between pollution levels and crime rates, this doesn’t automatically mean that one causes the other (Correlation doesn’t imply causation). A lot of other factors could influence both crime and environmental conditions.
+There are a few constraints that could affect our project. One issue is that crime reporting practices can vary between different law enforcement agencies. Some crimes can be underreported or classified differently, which could affect the accuracy of the data. Another limitation in our other dataset is that there is not air quality monitoring in every city. This means that some areas may have limited pollution data available. There could also be differences in how geographic boundaries are defined in the datasets. For example, crime data might only be reported by the city or police agency, while pollution data may be recorded at the county level. Because of this, we may need to adjust geographic information so the datasets can be merged properly. Finally, even if we find a relationship between pollution levels and crime rates, this doesn’t automatically mean that one causes the other (correlation doesn’t imply causation). A lot of other factors could influence both crime and environmental conditions.
 
-As we continue working on the project, there are a few areas where we might need additional information or adjustments. One possible improvement would be adding demographic data from the U.S. Census to help control for factors such as population density or income levels. These variables might help explain differences in crime rates across locations. We may also need to adjust our analysis methods depending on what the data looks like once it is cleaned and merged.
+As we continue working on the project, there are a few areas where we might need additional information. One possible improvement would be adding demographic data from the U.S. Census to help control for factors such as population density or income levels. These variables might help explain differences in crime rates across locations. We may also need to adjust our analysis methods depending on what the data looks like once it is cleaned and merged.
 
 
