@@ -2,7 +2,7 @@
 
 Week 4 (Current): Both datasets cleaned and explored
 
-Week 5: Merge datasets and begin analysis (Samika)
+Week 5: Merge datasets and begin analysis (Both)
 
 Week 6: Examine relationships between pollution and crime (Both)
 
