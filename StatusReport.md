@@ -33,7 +33,7 @@ Based on feedback from Milestone 2, we also made sure to document the license an
 
 Some challenges we ran into were issues with our GitHub and the datasets. For our github involved, push rejections caused by conflicts between the local branch and updates already present on GitHub, relating to the initial README file. This required resolving the issue by pulling changes from the main repository and rebasing before successfully pushing updates. Additionally, there were minor challenges with ensuring that files were properly staged, committed, and pushed in the correct order.
 
-Both datasets required some cleaning and preprocessing before analysis could begin. There were missing values across several columns,and outliers that we which addressed through removal. 
+Both datasets required some cleaning and preprocessing before analysis could begin. There were missing values across several columns,and outliers that we which addressed through removing those values. 
 
 All of these issues highlighted the importance of maintaining a consistent workflow, including regularly pulling the latest changes, committing with clear messages, and verifying that the correct branch was being used. Overall, resolving these problems improved understanding of version control practices and learning more about the data cleaning process.
 
