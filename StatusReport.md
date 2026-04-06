@@ -16,6 +16,8 @@ Since submitting our initial project plan, our team has made several updates bas
 
 We also made our crime dataset more specific. Rather than using a broad UCR dataset, we identified and downloaded Table 8 — Offenses Known to Law Enforcement by State by City, 2024, directly from the FBI Crime Data Explorer. This table contains city-level crime data including violent crime, property crime, murder, rape, robbery, aggravated assault, burglary, larceny-theft, motor vehicle theft, and arson across 8,986 cities in the United States. This level of specificity will allow us to conduct a more meaningful analysis when we merge it with the EPA air quality data.
 
+Additionally, we changed some of our tasks in the project timeline to better reflect our progress. We have not had the opportunity to merge both datasets and begin analysis yet, so those are tasks we plan to complete within the next week. This will set us up for success in the final weeks of the project.
+
 Based on feedback from Milestone 2, we also made sure to document the license and direct URLs for our datasets more clearly. Both datasets come from official U.S. government agencies (the FBI and the EPA) and are in the public domain, meaning they are freely available for public use without copyright restrictions. The direct URL for the crime dataset is https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads, and the EPA air quality dataset can be accessed at https://www.epa.gov/outdoor-air-quality-data.
 
 **6) Sreeja Nallamala's Contribution Summary**
