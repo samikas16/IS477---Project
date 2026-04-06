@@ -1,9 +1,13 @@
 **2) Updated Timeline**
 
 Week 4 (Current): Both datasets cleaned and explored
+
 Week 5: Merge datasets and begin analysis (Samika)
+
 Week 6: Examine relationships between pollution and crime (Both)
+
 Week 7: Write analysis section of report (Both)
+
 Week 8: Final review, GitHub update, and submission (Both)
   
 **4) Changes to Project and Progress**
