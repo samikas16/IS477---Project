@@ -4,22 +4,21 @@ import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-RAW_AQI   = "annual_aqi_by_cbsa_2024.csv"
-RAW_CRIME = "crime_cleaned.csv"
-OUT_MERGE = "merged_aqi_crime.csv"
-OUT_VIZ   = "visualizations.png"
-OUT_STATS = "analysis_summary.txt"
+rq   = "annual_aqi_by_cbsa_2024.csv"
+rc = "crime_cleaned.csv"
+m = "merged_aqi_crime.csv"
 
-aqi_df   = pd.read_csv(RAW_AQI)
-crime_df = pd.read_csv(RAW_CRIME)
+
+aqi_df   = pd.read_csv(rq)
+crime_df = pd.read_csv(rc)
 
 # Cleaning
 aqi_df["city"] = (aqi_df["CBSA"].str.split(",").str[0].str.split("-").str[0].str.strip().str.lower())
 crime_df["city"] = crime_df["city"].str.strip().str.lower()
 
 # Compute crime rates er-capita
-crime_df["violent_crime_rate"]  = (crime_df["violent_crime"]  / crime_df["population"]) * 100_000
-crime_df["property_crime_rate"] = (crime_df["property_crime"] / crime_df["population"]) * 100_000
+crime_df["violent_crime_rate"]  = (crime_df["violent_crime"]  / crime_df["population"]) * 100000
+crime_df["property_crime_rate"] = (crime_df["property_crime"] / crime_df["population"]) * 100000
 
 # Group crime to city level
 crime_agg = (crime_df.groupby("city").agg(
@@ -43,7 +42,7 @@ crime_agg["property_crime_rate"] = (crime_agg["property_crime"] / crime_agg["pop
 # Merge
 merged = pd.merge(aqi_df, crime_agg, on="city", how="inner")
 merged = merged[merged["population"] > 0].copy()
-merged.to_csv(index=False)
+merged.to_csv(m, index=False)
 
 
 #Visualizations
