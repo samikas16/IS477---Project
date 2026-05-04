@@ -46,52 +46,32 @@ fig.suptitle("Air Quality vs. Crime Rates Across U.S. Cities (2024)", fontsize=1
 
 # 1. Median AQI vs Violent Crime Rate
 ax = axes[0, 0]
-ax.scatter(merged["Median AQI"], merged["violent_crime_rate"],
-           alpha=0.5, color="steelblue", s=30)
-m, b = np.polyfit(merged["Median AQI"], merged["violent_crime_rate"], 1)
-x_line = np.linspace(merged["Median AQI"].min(), merged["Median AQI"].max(), 100)
-ax.plot(x_line, m * x_line + b, color="crimson", linewidth=2)
-ax.set_xlabel("Median AQI")
-ax.set_ylabel("Violent Crime Rate (per 100k)")
-ax.set_title("Median AQI vs Violent Crime Rate")
+ax.scatter(merged["Median AQI"], merged["violent_crime_rate"], alpha=0.5, color="steelblue", s=30)
+ax.set_xlabel("Median AQI"); ax.set_ylabel("Violent Crime Rate (per 100k)")
+ax.set_title(f"Median AQI vs Violent Crime Rate\n")
 
 # 2. Median AQI vs Property Crime Rate
 ax = axes[0, 1]
-ax.scatter(merged["Median AQI"], merged["property_crime_rate"],alpha=0.5, color="darkorange", s=30)
-m2, b2 = np.polyfit(merged["Median AQI"], merged["property_crime_rate"], 1)
-ax.plot(x_line, m2 * x_line + b2, color="crimson", linewidth=2)
-ax.set_xlabel("Median AQI")
-ax.set_ylabel("Property Crime Rate (per 100k)")
-ax.set_title("Median AQI vs Property Crime Rate")
+ax.scatter(merged["Median AQI"], merged["property_crime_rate"], alpha=0.5, color="darkorange", s=30)
+ax.set_xlabel("Median AQI"); ax.set_ylabel("Property Crime Rate (per 100k)")
+ax.set_title(f"Median AQI vs Property Crime Rate\n")
 
 # 3. Crime rates by AQI quartile
 
 ax = axes[1, 0]
-merged["aqi_quartile"] = pd.qcut(merged["Median AQI"], 4,labels=["Q1 (Best)", "Q2", "Q3", "Q4 (Worst)"])
-ax = axes[1, 0]
+merged["aqi_quartile"] = pd.qcut(merged["Median AQI"], 4, labels=["Q1 (Best)", "Q2", "Q3", "Q4 (Worst)"])
 q_data = merged.groupby("aqi_quartile")[["violent_crime_rate", "property_crime_rate"]].mean()
-x = np.arange(len(q_data))
-w = 0.35
-ax.bar(x - w/2, q_data["violent_crime_rate"],  w, label="Violent Crime",  color="steelblue")
-ax.bar(x + w/2, q_data["property_crime_rate"], w, label="Property Crime", color="darkorange")
-ax.set_xticks(x)
-ax.set_xticklabels(["Q1\n(Best AQI)", "Q2", "Q3", "Q4\n(Worst AQI)"])
+q_data.plot(kind="bar", ax=ax, color=["steelblue", "darkorange"], rot=0)
+ax.set_xlabel("")
 ax.set_ylabel("Avg Crime Rate (per 100k)")
-ax.set_title("Average Crime Rates by AQI Quartile")
-ax.legend()
+ax.set_title("Crime Rates by AQI Quartile")
+ax.legend(["Violent Crime", "Property Crime"])
 
 # 4. Good Days by crime
 ax = axes[1, 1]
-merged["crime_group"] = pd.qcut(
-    merged["violent_crime_rate"], 3,
-    labels=["Low Crime", "Mid Crime", "High Crime"]
-)
-merged.boxplot(
-    column="Good Days", by="crime_group", ax=ax,
-    boxprops=dict(color="steelblue"),
-    medianprops=dict(color="crimson", linewidth=2)
-)
-ax.set_xlabel("Violent Crime Group")
+merged["crime_group"] = pd.cut(merged["violent_crime_rate"], 3,labels=["Low", "Mid", "High"])
+merged.boxplot(column="Good Days", by="crime_group", ax=ax)
+ax.set_xlabel("Violent Crime Level")
 ax.set_ylabel("Good Air Quality Days")
 plt.sca(ax)
 plt.title("Good AQI Days by Crime Level")
