@@ -82,16 +82,16 @@ ax.legend()
 
 # 4. Good Days by crime
 ax = axes[1, 1]
-merged["crime_tertile"] = pd.qcut(
+merged["crime_group"] = pd.qcut(
     merged["violent_crime_rate"], 3,
     labels=["Low Crime", "Mid Crime", "High Crime"]
 )
 merged.boxplot(
-    column="Good Days", by="crime_tertile", ax=ax,
+    column="Good Days", by="crime_group", ax=ax,
     boxprops=dict(color="steelblue"),
     medianprops=dict(color="crimson", linewidth=2)
 )
-ax.set_xlabel("Violent Crime Tertile")
+ax.set_xlabel("Violent Crime Group")
 ax.set_ylabel("Good Air Quality Days")
 plt.sca(ax)
 plt.title("Good AQI Days by Crime Level")
