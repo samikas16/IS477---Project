@@ -4,13 +4,8 @@ import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-rq   = "annual_aqi_by_cbsa_2024.csv"
-rc = "crime_cleaned.csv"
-m = "merged_aqi_crime.csv"
-
-
-aqi_df   = pd.read_csv(rq)
-crime_df = pd.read_csv(rc)
+aqi_df   = pd.read_csv("annual_aqi_by_cbsa_2024.csv")
+crime_df = pd.read_csv("crime_cleaned.csv")
 
 # Cleaning
 aqi_df["city"] = (aqi_df["CBSA"].str.split(",").str[0].str.split("-").str[0].str.strip().str.lower())
@@ -42,7 +37,7 @@ crime_agg["property_crime_rate"] = (crime_agg["property_crime"] / crime_agg["pop
 # Merge
 merged = pd.merge(aqi_df, crime_agg, on="city", how="inner")
 merged = merged[merged["population"] > 0].copy()
-merged.to_csv(m, index=False)
+merged.to_csv("merged_aqi_crime.csv", index=False)
 
 
 #Visualizations
