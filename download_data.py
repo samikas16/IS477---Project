@@ -1,5 +1,12 @@
 import os
 import requests
+import zipfile
+
+def extract_zip(zip_path):
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(".")
+
+extract_zip("annual_aqi_by_cbsa_2024.zip")
 
 AQI_URL = "https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2024.zip"
 OUTPUT_FILE = "annual_aqi_by_cbsa_2024.zip"
