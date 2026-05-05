@@ -123,13 +123,14 @@ The five cities with the worst air quality were Riverside-San Bernardino, CA (97
 
 The five cities with the highest violent crime rates were Memphis, TN (2,489 per 100,000), Detroit, MI (1,781), Atlantic City, NJ (1,780), Little Rock, AR (1,672), and Americus, GA (1,654). Interestingly, none of these cities had the worst air quality, which suggests that crime is driven by a lot more than just pollution. This shows up in the scatter plots too, where there is a huge spread in crime rates at every AQI level, so there is clearly no simple linear relationship between the two variables.
 
+<img width="1164" height="908" alt="image" src="https://github.com/user-attachments/assets/864c2232-aefa-4538-8495-930540607093" />
+
+
 The boxplot of good air quality days by AQI quartile shows a pretty clear pattern, with Q1 cities having a median of around 305 good days per year, Q2 around 270, Q3 around 235, and Q4 only about 165. When we looked at crime groups instead, low crime cities averaged 239 good air quality days, mid crime cities averaged 208, and high crime cities averaged only 164. So cities with cleaner air do tend to have lower crime, but this probably has more to do with underlying socioeconomic factors than air quality directly causing or preventing crime.
 
 Overall there is a noticeable trend where cities with worse air quality tend to have higher crime rates, but it is not a clean relationship. A lot of high crime cities have perfectly moderate air quality, which points to poverty, population density, and urban inequality being the real drivers behind both outcomes at the same time.
 
 ## Future Work
-
-Future Work
 
 This project gave us a lot of hands-on experience working with real government datasets, and honestly we learned just as much from the process as we did from the results. One of the biggest takeaways was how important it is to actually understand your data before writing any code. Both datasets needed careful inspection before we could even start cleaning. The FBI crime dataset in particular had a messy Excel structure with multi-row headers that caught us off guard. If we did this again we would spend a lot more time on exploratory data analysis before jumping into the merge and analysis steps.
 
