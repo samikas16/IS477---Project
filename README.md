@@ -159,12 +159,6 @@ Overall this project was a solid introduction to acquiring, cleaning, merging, a
 
 ## Reproducing
 
-Here is your **fully integrated Reproducing section** (clean, consistent, and ready to paste into `README.md`):
-
----
-
-## Reproducing
-
 ### 1. Clone the repository
 
 ```bash
