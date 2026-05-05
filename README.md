@@ -216,7 +216,7 @@ Both files must pass verification before continuing.
 
 ---
 
-### 5. Run full pipeline (recommended)
+### 5. Run full pipeline 
 
 ```bash
 snakemake --cores 1
@@ -231,7 +231,7 @@ This executes the full workflow:
 
 ---
 
-### 6. Manual execution (optional)
+### 6. Manual execution 
 
 If running step-by-step instead of Snakemake:
 
