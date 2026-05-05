@@ -104,7 +104,7 @@ Overall, these cleaning steps improved accuracy, consistency, and usability, mak
 
 For the merge strategy, we combined the AQI dataset and the crime dataset to analyze potential relationships between air quality and crime levels across cities. Since the two datasets did not originally share a common key, we had to create a shared variable to make the merge possible.
 
-First, we extracted a “city” column from the AQI dataset by splitting the CBSA field. The CBSA column contained both the metro area name and state abbreviation, so we split it by commas and hyphens to isolate only the city name. We then cleaned it by stripping extra spaces and converting all text to lowercase. We applied the same cleaning process to the city column in the crime dataset. This step was important to standardize formatting and avoid mismatches during merging.
+First, we extracted a “city” column from the AQI dataset by splitting the CBSA field. The CBSA column contained both the metro area name and state abbreviation, so we split it by commas and hyphens to isolate only the city name. We then cleaned it by stripping extra spaces and converting all text to lowercase. We also made sure to drop duplicate cities for both datasets. We applied the same cleaning process to the city column in the crime dataset. This step was important to standardize formatting and avoid mismatches during merging.
 
 After standardizing the city names, we used an inner merge on the “city” column. We chose an inner join because we only wanted records that existed in both datasets, ensuring that the final dataset contained complete information for both air quality and crime variables.
 
