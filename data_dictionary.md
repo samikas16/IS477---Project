@@ -75,11 +75,3 @@ Each row represents a city or metro area and includes:
 - population
 - derived crime rates
 
----
-
-## Notes and Limitations
-
-- Crime data reflects reported incidents and may be underreported.
-- AQI data is aggregated at the metro level, not exact city boundaries.
-- Matching by city names may introduce minor inconsistencies.
-- No personally identifiable information is included in the datasets.
