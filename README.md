@@ -6,7 +6,7 @@
 - Samika Sripathi
 
 ## Summary
-
+500 words -- needs to reflect rest of report
 
 
 ## Data Profile
