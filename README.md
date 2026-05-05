@@ -68,7 +68,20 @@ This dataset directly relates to our research questions because it allows us to 
 
 ### AQI Dataset Cleaning
 
-The AQI dataset required minimal cleaning. The primary operation was extracting a matchable city name from the CBSA field for merging purposes. CBSA names follow the format "PrimaryCity-SecondaryCity, StateAbbrev(s)", so we split on the comma to isolate the city portion, then split on the hyphen to take only the primary city name, and finally applied .str.strip().str.lower() to standardize case and remove whitespace. 
+For the AQI dataset, we performed several data cleaning steps to make sure the data was accurate, consistent, and ready for analysis. Even though this dataset was already fairly clean compared to others, we still checked for common issues like missing values, duplicates, and incorrect data types.
+
+First, we loaded the dataset and inspected the structure using `.head()`, `.shape`, and `.dtypes`. This helped us understand how the data was organized and confirm that each column matched its expected type. We found that most of the columns were already correctly formatted as integers or objects, which reduced the amount of heavy cleaning needed.
+
+Next, we checked for missing values using `df.isnull().sum()`. This step is important because missing data can affect calculations like averages or comparisons across cities. In this dataset, all columns showed zero missing values, which means the dataset was already complete. Even though no imputation was needed, doing this check helped confirm data quality and reliability.
+
+We also removed duplicate rows using `df.drop_duplicates()`. Duplicate entries can inflate results and create bias, especially when calculating averages or identifying trends across cities. By removing duplicates, we ensured that each CBSA was only represented once per year, keeping the dataset accurate and preventing overcounting.
+
+After cleaning, we verified the dataset structure again using `df.shape` and found that it contained 501 rows and 18 columns. This confirmed that no important data was accidentally removed during cleaning. We also rechecked data types to make sure all AQI-related variables (like “Good Days,” “Moderate Days,” and “Median AQI”) remained numeric. This was important because numeric formatting is required for calculations such as means, grouping, and comparisons.
+
+We also created a quick validation step by checking summary statistics using `df.describe()`. This helped us confirm that the values made sense logically, such as “Good Days” being much higher than “Hazardous Days,” which matches expectations for air quality data.
+
+Overall, the cleaning process focused more on verification than heavy transformation. The main goal was to ensure there were no missing values, no duplicate records, and that all variables were correctly formatted for analysis. These steps improved the reliability of the dataset and made it suitable for comparing air quality across different regions and identifying patterns in AQI distribution.
+
 
 ### Crime Dataset Cleaning
 
