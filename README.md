@@ -143,6 +143,22 @@ We found that after merging the EPA air quality dataset with the FBI crime datas
    - AQI: https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2024.zip
    - Crime: https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads
 
+Crime dataset:
+- Source: FBI Crime Data Explorer (UCR)
+- URL: https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads
+- Data is manually downloaded because FBI does not provide a stable API or direct CSV endpoint.
+
+Steps to reproduce:
+1. Open FBI Crime Data Explorer link
+2. Navigate to “Downloads”
+3. Select “Offenses Known to Law Enforcement by State by City (2024)”
+4. Download Excel file
+5. Clean using CrimeDataset.ipynb
+6. Save final output as crime_cleaned.csv
+
+Automated acquisition is not possible for this dataset due to lack of public API or stable direct download URL. Therefore, manual download is required, but full processing and cleaning are reproducible via provided scripts/notebooks.
+
+
 4. **Verify checksums:**
    ```
    annual_aqi_by_cbsa_2024.csv: 548c45b5b8822f5bcd988a17ea55726134ca668b82151c418ce3f7b3b2663cff
