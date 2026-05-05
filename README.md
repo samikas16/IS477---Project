@@ -155,7 +155,15 @@ Overall this project was a solid introduction to acquiring, cleaning, merging, a
 
 ## Challenges
 
-(We will write later)
+A lesson we learned from this project was how difficult it can be to merge datasets that come from different sources, even when they are both produced by U.S. government agencies and are both describing the same geographic areas. Going into this project, we assumed that combining two government datasets would be relatively straightforward since they both cover U.S. cities and are both from 2024.
+
+The first challenge we encountered was extracting a usable city name from the CBSA strings in the EPA dataset. CBSA names follow a format like "Chicago-Naperville-Elgin", which represents a metropolitan area rather than a city. To match these against the city names in the FBI crime dataset, we had to parse the string by splitting on the comma to remove the state abbreviations, then splitting on the hyphen to isolate just the primary city name, and finally lowercasing everything to standardize formatting. While this approach worked for many cities, there were special cases. For example, a CBSA like "Riverside-San Bernardino-Ontario, CA" gets reduced to just "Riverside", which means the match depends entirely on whether Riverside appears as a city name in the crime dataset. Cities where the primary CBSA city was not the same as the city name used by the FBI were lost in the merge. Out of 501 AQI metro areas, we were only able to match 463, meaning roughly 40 cities could not be matched and were excluded from the analysis.
+
+The second challenge was that the FBI crime dataset contains one row per reporting law enforcement agency, not one row per city. Many cities have multiple agencies reporting data. For example, a city might have both a main police department and a university police department, each submitting separate rows. If we had merged directly without accounting for this, each agency row would have been matched to the same AQI row, increasing the number of observations and producing duplicate entries that would have skewed our results. To fix this, we aggregated the crime dataset by city before merging, summing all crime counts and populations across agencies that shared the same city name.
+
+Beyond the merge challenges, we also learned about working with real government datasets more generally. Both datasets required cleaning steps that were not obvious from the documentation alone. The FBI Excel file used merged cells and multi-row headers that required special handling when loading into pandas, including skipping the first four rows and forward-filling the state column to state names across blank rows.  We also learned the importance of version control while using GitHub. We encountered GitHub conflicts caused by inconsistent pulling and pushing, which took a long time to resolve and slowed our progress. 
+
+Overall, this project taught us that merging real-world datasets requires more than just finding a common column to join on. It requires understanding how each dataset defines its geographic and location units, what level of grouping the data is at, how the files are structured, and what gets lost when two large datasets are combined. 
 
 ## Reproducing
 
