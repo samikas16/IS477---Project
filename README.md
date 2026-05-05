@@ -119,12 +119,23 @@ The FBI crime dataset had 8,986 city-level observations across the United States
 
 After merging the two datasets we ended up with 463 city-level observations. The merged dataset had a median AQI ranging from 7 to 97, a mean violent crime rate of 490 per 100,000, and a mean property crime rate of 2,379 per 100,000. We then split cities into four quartile groups by median AQI. Q1 cities (best air quality) averaged a violent crime rate of 389 and a property crime rate of 2,163 per 100,000. Q2 averaged 406 violent and 2,131 property crimes per 100,000. Q3 jumped to 525 violent and 2,425 property crimes per 100,000. Q4 cities (worst air quality) averaged 648 violent and 2,824 property crimes per 100,000. That is a 66% increase in violent crime and a 31% increase in property crime just going from the cleanest to the most polluted group. The bar chart makes this trend pretty obvious, with both crime types climbing steadily from Q1 to Q4 and property crime rates consistently much higher than violent crime across every quartile.
 
-The five cities with the worst air quality were Riverside-San Bernardino, CA (97), Phoenix-Mesa-Scottsdale, AZ (86), Bakersfield, CA (72), Visalia-Porterville, CA (71), and San Diego, CA (71), all in California or Arizona. Their violent crime rates were pretty spread out though, with Phoenix being the highest at 797 per 100,000 and San Diego the lowest at 412. All five had above-average property crime rates compared to the full dataset mean of 2,379.
-
-The five cities with the highest violent crime rates were Memphis, TN (2,489 per 100,000), Detroit, MI (1,781), Atlantic City, NJ (1,780), Little Rock, AR (1,672), and Americus, GA (1,654). Interestingly, none of these cities had the worst air quality, which suggests that crime is driven by a lot more than just pollution. This shows up in the scatter plots too, where there is a huge spread in crime rates at every AQI level, so there is clearly no simple linear relationship between the two variables.
 
 <img width="1164" height="908" alt="image" src="https://github.com/user-attachments/assets/864c2232-aefa-4538-8495-930540607093" />
 
+
+<img width="586" height="455" alt="image" src="https://github.com/user-attachments/assets/9ba5b949-4faa-4def-b9ff-8735186ee0f5" />
+
+
+<img width="580" height="455" alt="image" src="https://github.com/user-attachments/assets/670bc651-ba7e-4241-92d6-4fa941817b4e" />
+
+
+<img width="587" height="445" alt="image" src="https://github.com/user-attachments/assets/5456d604-d2c0-4bf3-99c2-01bd1699d7e4" />
+
+
+
+The five cities with the worst air quality were Riverside-San Bernardino, CA (97), Phoenix-Mesa-Scottsdale, AZ (86), Bakersfield, CA (72), Visalia-Porterville, CA (71), and San Diego, CA (71), all in California or Arizona. Their violent crime rates were pretty spread out though, with Phoenix being the highest at 797 per 100,000 and San Diego the lowest at 412. All five had above-average property crime rates compared to the full dataset mean of 2,379.
+
+The five cities with the highest violent crime rates were Memphis, TN (2,489 per 100,000), Detroit, MI (1,781), Atlantic City, NJ (1,780), Little Rock, AR (1,672), and Americus, GA (1,654). Interestingly, none of these cities had the worst air quality, which suggests that crime is driven by a lot more than just pollution. This shows up in the scatter plots too, where there is a huge spread in crime rates at every AQI level, so there is clearly no simple linear relationship between the two variables.
 
 The boxplot of good air quality days by AQI quartile shows a pretty clear pattern, with Q1 cities having a median of around 305 good days per year, Q2 around 270, Q3 around 235, and Q4 only about 165. When we looked at crime groups instead, low crime cities averaged 239 good air quality days, mid crime cities averaged 208, and high crime cities averaged only 164. So cities with cleaner air do tend to have lower crime, but this probably has more to do with underlying socioeconomic factors than air quality directly causing or preventing crime.
 
