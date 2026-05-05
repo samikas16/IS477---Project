@@ -19,6 +19,19 @@ This project investigates whether a relationship exists between air pollution le
 **Format:** CSV
 **License:** Public domain (U.S. government work)
 
+The first dataset used in this project is the Environmental Protection Agency (EPA) air quality dataset titled “Annual AQI by CBSA (2024).” This dataset was loaded from a CSV file named **annual_aqi_by_cbsa_2024.csv**, which is stored in the project repository (`annual_aqi_by_cbsa_2024.csv`). The file is already in CSV format, which makes it easy to read and process using Python.
+
+In terms of structure, the dataset is organized in a clean tabular format with 501 rows and 18 columns. Each row represents a Core-Based Statistical Area (CBSA), which is essentially a metro area or region. The columns include variables such as the CBSA name, CBSA code, year, and multiple air quality measures. These measures include the number of “Good Days,” “Moderate Days,” and days in different unhealthy categories like “Unhealthy for Sensitive Groups,” “Unhealthy,” “Very Unhealthy,” and “Hazardous.” It also includes summary statistics like maximum AQI, median AQI, and the 90th percentile AQI. All columns are numeric except for the CBSA name, which is a categorical variable.
+
+The content of this dataset focuses on air quality levels across different regions in the United States for the year 2024. One important characteristic is that it breaks down air quality into categories based on the Air Quality Index (AQI), which helps show not just averages but also how often air quality reaches unhealthy levels. Another key feature is that the dataset tracks pollutants such as carbon monoxide (CO), nitrogen dioxide (NO2), ozone, PM2.5, and PM10 by counting how many days each pollutant was the main contributor to poor air quality.
+
+During cleaning, we dropped any missing values and duplicate rows to ensure the dataset was consistent and reliable. Since there were no missing values to begin with, this step mainly confirmed the dataset’s quality. We also checked data types to make sure all numeric fields were properly formatted for analysis.
+
+From an ethical and legal perspective, this dataset comes from a U.S. government agency and is considered public domain, meaning there are no restrictions on its use. There is no personally identifiable information included, so there are no privacy concerns. However, one limitation is that AQI data is based on monitoring stations, which may not fully represent air quality in all areas, especially rural regions.
+
+This dataset directly supports our research questions by allowing us to compare air quality across different regions and identify areas with the best and worst conditions. For example, we can analyze which cities have the highest median AQI or the most unhealthy days. When combined with the crime dataset, it also helps explore whether there are any patterns or relationships between environmental conditions and crime levels.
+
+
 ### Dataset 2: FBI UCR Offenses Known to Law Enforcement by State by City (2024)
 
 **Source:** Federal Bureau of Investigation, Crime Data Explorer
@@ -27,7 +40,16 @@ This project investigates whether a relationship exists between air pollution le
 **Format:** CSV (cleaned from original Excel)
 **License:** Public domain (U.S. government work)
 
-**Ethical considerations:** Both datasets are published by U.S. federal agencies and are in the public domain with no redistribution restrictions. The crime data reflects reported offenses only; underreporting is a known limitation of UCR data. No personally identifiable information is present in either dataset. 
+The second dataset used in this project is the FBI’s Uniform Crime Reporting (UCR) data titled “Offenses Known to Law Enforcement by State by City (2024).” This dataset was downloaded from the FBI Crime Data Explorer and then cleaned and saved as a CSV file named **crime_cleaned.csv**. In the project repository, this file is stored as `crime_cleaned.csv`. The original file was in Excel format, but it was converted to CSV after cleaning to make it easier to work with in Python.
+
+In terms of structure, the dataset is organized in a tabular format where each row represents a specific city within a state. The columns include variables such as state, city, population, total violent crime, and specific crime categories like murder, rape, robbery, and aggravated assault. It also includes property crime data, such as burglary, larceny-theft, motor vehicle theft, and arson. After cleaning, the dataset contains around 8,986 rows and 13 main columns, with additional calculated columns like violent crime rate and property crime rate. Most of the variables are numeric, which makes them suitable for statistical analysis, while state and city are categorical identifiers.
+
+The content of the dataset focuses on reported crime counts collected by law enforcement agencies across the United States. One important characteristic of this dataset is that it reports raw counts rather than rates, which means larger cities tend to have higher numbers simply due to population size. That is why we created new variables like crime rates per 100,000 people to allow fair comparisons across cities. Another key characteristic is that the data includes some inconsistencies from the original source, such as missing values and formatting issues, which required cleaning before analysis.
+
+There are also some ethical and legal considerations. Since this dataset comes from a U.S. federal agency, it is in the public domain and does not have restrictions on use or redistribution. There is no personally identifiable information included, so there are no privacy concerns at the individual level. However, there are still limitations to consider. The data only includes crimes that were reported to law enforcement, meaning underreporting is a known issue. This can affect the accuracy of conclusions, especially for crimes that are less likely to be reported.
+
+This dataset directly relates to our research questions because it allows us to analyze patterns in crime across different cities and states. For example, we can compare which states have the highest total violent crime, identify cities with the highest crime levels, and examine which types of crime are most common. Overall, it provides a strong foundation for understanding crime trends at a local and national level.
+
 
 ## Data Quality
 
