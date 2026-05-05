@@ -119,7 +119,17 @@ We found that after merging the EPA air quality dataset with the FBI crime datas
 
 ## Future Work
 
-(We will write later)
+Future Work
+
+This project provided experience working with real government datasets. One of the lessons we learned was the value of understanding your data before writing any code. Both datasets required careful inspection before cleaning could begin. The FBI crime dataset, in particular, had a complex Excel structure with multi-row headers that was not immediately apparent. In the future, we would spend more time on exploratory data analysis before moving to the merge and analysis steps. We also learned that merging datasets from different sources is a multistep process. The AQI dataset uses Core-Based Statistical Area names, which represent entire metropolitan regions, while the crime dataset uses individual city names. Extracting a city name from a CBSA string and matching it to a city in the crime dataset introduced geographic imprecision that affected the quality of our merged dataset. We also learned that version control habits matter from the very beginning of a project. Early GitHub conflicts caused by inconsistent pulling and pushing slowed down our workflow and required extra time to resolve. 
+
+The most significant limitation of this project is the lack of nuance. Both air quality and crime rates are heavily influenced by underlying factors such as poverty, income inequality, population density, and unemployment. Without controlling for these variables, it is impossible to determine whether the observed relationship between air quality and crime reflects a genuine environmental effect or simply the fact that economically disadvantaged areas tend to have both poorer air quality and higher crime rates. Future work should incorporate demographic data from the U.S. Census Bureau, such as median household income, poverty rate, and population density.
+
+Several extensions would strengthen this analysis. Disaggregating air quality by specific pollutant rather than using the composite AQI score could reveal whether certain pollutants are more strongly associated with crime than others. Examining PM2.5 and other specific pollutants separately could produce more actionable findings. Second, incorporating spatial analysis tools such as geographic clustering or mapping would allow us to visualize where high-pollution and high-crime areas overlap geographically and identify regional patterns that are not apparent from tabular analysis alone. Adding a map visualization to this project would make the findings more accessible and easier to communicate to a general audience.
+
+Finally, future work could explore whether certain types of crime are more strongly associated with air quality than others. Our analysis treated violent crime and property crime as two broad categories, but disaggregating into subcategories such as assault, robbery, or burglary might reveal more specific patterns.
+
+Overall, this project served as a strong foundation for understanding how to acquire, clean, merge, and analyze real-world government datasets. There is much nuance in this topic, so there is never going to be one correlation that implies causation. It is important to acknowledge the many other factors that could contribute to this issue. The findings are at a basic level but suggest that the relationship between environmental quality and public safety is worth investigating further with more detailed methods and more thorough data.
 
 ## Challenges
 
