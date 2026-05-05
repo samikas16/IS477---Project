@@ -7,7 +7,7 @@
 
 ## Summary
 
-This project investigates whether a relationship exists between air pollution levels and crime rates across cities in the United States using 2024 data. Environmental quality and public safety are two concerns that frequently intersect in policy discussions, yet empirical analysis of their co-occurrence at the city level is limited. Our core research questions were:Is there a measurable relationship between air pollution levels and crime rates across U.S. cities? Does pollution relate differently to violent crime versus property crime? Are there regional patterns where high pollution and high crime co-occur? To answer these questions, we merged the EPA's annual Air Quality Index (AQI) dataset for 2024 with the FBI's Uniform Crime Reporting (UCR) dataset for 2024, which records offenses known to law enforcement by city. Our analysis found a statistically significant positive correlation between Median AQI and violent crime rate, meaning cities with worse air quality tended to report higher violent crime rates per capita. 
+
 
 ## Data Profile
 
