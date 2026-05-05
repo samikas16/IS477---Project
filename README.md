@@ -50,7 +50,21 @@ The AQI dataset required minimal cleaning. The primary operation was extracting 
 
 ### Crime Dataset Cleaning
 
-The crime dataset cleaning involved several steps. First, we skipped the first 4 rows of the Excel file, which contained title and formatting content rather than data. Second, we manually assigned column names to replace the default multi-level header. Third, we dropped rows where the city column was null, as these were formatting artifacts. Fourth, we forward-filled the state column to propagate state names across the blank rows that followed the first city in each state group. Fifth, we converted all numeric columns using pd.to_numeric(errors='coerce') to handle footnote characters and formatting symbols that appeared in some cells.
+In this project, we performed several data cleaning steps to turn the Crime Excel dataset into something usable for analysis. Each step was meant to fix a specific data quality issue that would have caused problems later.
+
+First, we adjusted how the file was read in by skipping the first four rows. The original dataset had extra header information and notes at the top, which were not part of the actual data. If we did not skip these rows, the columns would be misaligned and difficult to work with. After that, we manually renamed all the columns to clear and consistent names. This made the dataset easier to understand and allowed us to reference columns without confusion.
+
+Next, we removed rows where the city value was missing. These rows did not represent real observations, so keeping them would have added unnecessary noise. Another issue we noticed was that the “state” column had missing values for many rows. This happened because the dataset only listed the state name once for a group of cities. To fix this, we filled the missing state values downward so that each city had the correct state attached.
+
+We then converted all numeric columns, such as population and crime counts, into proper numeric data types. Some values were likely read as text, which would prevent calculations from working correctly. By converting these columns and forcing errors to become null values, we ensured consistency across the dataset.
+
+After that, we dropped rows that were still missing key values like population or violent crime. These fields are important for analysis, so rows without them would not be useful. We also reset the index to keep the dataset clean and organized after removing rows.
+
+Finally, we created new variables such as violent crime rate and property crime rate. This step was important because raw counts can be misleading when comparing cities of different sizes. By standardizing crime per 100,000 people, the data became more meaningful.
+
+Overall, these cleaning steps improved accuracy, consistency, and usability, making the dataset reliable for further analysis.
+
+
 ### Merge Strategy
 
 To merge the two datasets, we standardized city names from both and performed an inner join on the city field. The inner join retained only cities present in both datasets. Of 501 AQI metro areas and 6,892 unique city names in the crime data, the city matches were retained in the final merged dataset.
