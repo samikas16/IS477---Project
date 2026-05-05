@@ -102,7 +102,7 @@ Overall, these cleaning steps improved accuracy, consistency, and usability, mak
 
 ### Merge Strategy
 
-To merge the two datasets, we standardized city names from both and performed an inner join on the city field. The inner join retained only cities present in both datasets. Of 501 AQI metro areas and 6,892 unique city names in the crime data, the city matches were retained in the final merged dataset.
+To merge the two datasets, we standardized city names in both datasets by converting them to lowercase and removing extra spaces, then extracted city names from the AQI CBSA field. We performed an inner join on the city column so that only cities appearing in both datasets were included in the final dataset. This ensured that each record contained both air quality and crime information. However, because some cities appear multiple times across datasets, the merge can result in repeated rows rather than a strict one-to-one match.
 
 ## Findings
 
