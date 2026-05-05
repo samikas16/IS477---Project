@@ -159,57 +159,106 @@ Overall this project was a solid introduction to acquiring, cleaning, merging, a
 
 ## Reproducing
 
+Here is your **fully integrated Reproducing section** (clean, consistent, and ready to paste into `README.md`):
 
-1. **Clone the repository:**
-   ```bash
-   git clone <repo-url>
-   cd IS477-Project
-   ```
+---
 
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Reproducing
 
-3. **Download the raw datasets**:
-   - AQI: https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2024.zip
-   - Crime: https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads
+### 1. Clone the repository
 
-Crime dataset:
-- Source: FBI Crime Data Explorer (UCR)
-- URL: https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads
-- Data is manually downloaded because FBI does not provide a stable API or direct CSV endpoint.
+```bash
+git clone <repo-url>
+cd IS477-Project
+```
 
-Steps to reproduce:
-1. Open FBI Crime Data Explorer link
-2. Navigate to “Downloads”
-3. Select “Offenses Known to Law Enforcement by State by City (2024)”
-4. Download Excel file
-5. Clean using CrimeDataset.ipynb
-6. Save final output as crime_cleaned.csv
+### 2. Install dependencies
 
-Automated acquisition is not possible for this dataset due to lack of public API or stable direct download URL. Therefore, manual download is required, but full processing and cleaning are reproducible via provided scripts/notebooks.
+```bash
+pip install -r requirements.txt
+```
 
+---
 
-4. **Verify checksums:**
-   ```
-   annual_aqi_by_cbsa_2024.csv: 548c45b5b8822f5bcd988a17ea55726134ca668b82151c418ce3f7b3b2663cff
-   crime_cleaned.csv:           9ede2384558c90fe0a5b22d68ae41d2449755d0d6de7dad64681ea0d297dd0b8
-   ```
+### 3. Data acquisition
 
-5. **Run the full pipeline using Snakemake:**
-   ```bash
-   snakemake --cores 1
-   ```
+#### AQI dataset (automated download)
 
-6. **Or run notebooks manually in order:**
-   - `CrimeDataset.ipynb` — cleans the raw Excel file and saves `crime_cleaned.csv`
-   - `EnvironmentDataset.ipynb` — exploratory analysis of AQI data
-   - `merge.ipynb` — merges the two datasets
-   - `analysis.py` — generates statistics
+The AQI dataset is downloaded and extracted automatically using:
 
-**Expected outputs:** `merged_aqi_crime.csv`
+```bash
+python3 download_data.py
+```
 
+Source:
+[https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2024.zip](https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2024.zip)
+
+This script downloads and prepares `annual_aqi_by_cbsa_2024.csv` for analysis.
+
+---
+
+#### Crime dataset (manual download)
+
+The crime dataset was downloaded from the FBI Crime Data Explorer (CDE), available at [https://cde.ucr.cjis.gov](https://cde.ucr.cjis.gov). We accessed the “Crime in the United States Annual Reports” section and selected the 2024 release. The full dataset was downloaded as a compressed file. After extraction, we used the file *CIUS_Table_8_Offenses_Known_by_City_2024.xlsx*, which contains offense counts organized by state and city for 2024.
+
+Because the FBI Crime Data Explorer does not provide a stable API or direct CSV endpoint, the dataset cannot be programmatically retrieved. For reproducibility, the raw file must be downloaded manually following the steps above. The data is then processed using `CrimeDataset.ipynb`, which performs cleaning and outputs the final file `crime_cleaned.csv` used in the pipeline.
+
+---
+
+### 4. Verify data integrity (SHA-256 checksums)
+
+Run:
+
+```bash
+python3 verify_checksums.py --aqi annual_aqi_by_cbsa_2024.csv --crime crime_cleaned.csv
+```
+
+Expected checksums:
+
+* AQI: `548c45b5b8822f5bcd988a17ea55726134ca668b82151c418ce3f7b3b2663cff`
+* Crime: `9ede2384558c90fe0a5b22d68ae41d2449755d0d6de7dad64681ea0d297dd0b8`
+
+Both files must pass verification before continuing.
+
+---
+
+### 5. Run full pipeline (recommended)
+
+```bash
+snakemake --cores 1
+```
+
+This executes the full workflow:
+
+* AQI download and extraction
+* checksum verification
+* dataset merging
+* analysis and visualization
+
+---
+
+### 6. Manual execution (optional)
+
+If running step-by-step instead of Snakemake:
+
+* `CrimeDataset.ipynb` → cleans crime dataset
+* `EnvironmentDataset.ipynb` → explores AQI dataset
+* `merge.py` → merges datasets into `merged_aqi_crime.csv`
+* `analyze.py` → generates analysis outputs and visualizations
+
+---
+
+### Output files
+
+After successful execution, the following files are generated:
+
+* `annual_aqi_by_cbsa_2024.csv`
+* `crime_cleaned.csv`
+* `merged_aqi_crime.csv`
+* `analysis_output.txt`
+* Visualization PNG files
+
+---
 
 ## References
 
