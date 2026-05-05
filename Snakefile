@@ -4,18 +4,12 @@ rule all:
         "checksums_verified.txt",
         "analysis_output.txt"
 
-# -------------------
-# DOWNLOAD AQI ZIP
-# -------------------
 rule download_aqi:
     output:
         "annual_aqi_by_cbsa_2024.zip"
     shell:
         "python3 download_data.py"
 
-# -------------------
-# EXTRACT AQI CSV
-# -------------------
 rule extract_aqi:
     input:
         "annual_aqi_by_cbsa_2024.zip"
@@ -30,9 +24,6 @@ with zipfile.ZipFile('{input}', 'r') as z:
         "
         """
 
-# -------------------
-# VERIFY CHECKSUMS
-# -------------------
 rule verify:
     input:
         aqi="annual_aqi_by_cbsa_2024.csv",
@@ -42,9 +33,6 @@ rule verify:
     shell:
         "python3 verify_checksums.py --aqi {input.aqi} --crime {input.crime}"
 
-# -------------------
-# MERGE DATASETS
-# -------------------
 rule merge:
     input:
         aqi="annual_aqi_by_cbsa_2024.csv",
@@ -54,9 +42,6 @@ rule merge:
     shell:
         "python3 merge.py --aqi {input.aqi} --crime {input.crime} --out {output}"
 
-# -------------------
-# ANALYSIS
-# -------------------
 rule analyze:
     input:
         "merged_aqi_crime.csv"
