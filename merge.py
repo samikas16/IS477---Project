@@ -14,9 +14,6 @@ def main(aqi_path, crime_path, out_path):
     )
     crime_df["city"] = crime_df["city"].str.strip().str.lower()
 
-    aqi_df = aqi_df.drop_duplicates(subset=["city"])
-    crime_df = crime_df.drop_duplicates(subset=["city"])
-
     crime_agg = crime_df.groupby("city").agg({
         "population": "sum",
         "violent_crime": "sum",
