@@ -152,7 +152,6 @@ cd IS477-Project
 pip install -r requirements.txt
 ```
 
----
 
 ### 3. Data acquisition
 
@@ -169,15 +168,14 @@ Source:
 
 This script downloads and prepares `annual_aqi_by_cbsa_2024.csv` for analysis.
 
----
 
 #### Crime dataset (manual download)
 
-The crime dataset was downloaded from the FBI Crime Data Explorer (CDE), available at [https://cde.ucr.cjis.gov](https://cde.ucr.cjis.gov). We accessed the “Crime in the United States Annual Reports” section and selected the 2024 release. The full dataset was downloaded as a compressed file. After extraction, we used the file *CIUS_Table_8_Offenses_Known_by_City_2024.xlsx*, which contains offense counts organized by state and city for 2024.
+The crime dataset was downloaded from the FBI Crime Data Explorer (CDE), available at [https://cde.ucr.cjis.gov](https://cde.ucr.cjis.gov). We accessed the “Crime in the United States Annual Reports” section and selected the 2024 release. The full dataset was downloaded as a compressed file. After extraction, we used the file CIUS_Table_8_Offenses_Known_by_City_2024.xlsx, which contains offense counts organized by state and city for 2024.
 
-Because the FBI Crime Data Explorer does not provide a stable API or direct CSV endpoint, the dataset cannot be programmatically retrieved. For reproducibility, the raw file must be downloaded manually following the steps above. The data is then processed using `CrimeDataset.ipynb`, which performs cleaning and outputs the final file `crime_cleaned.csv` used in the pipeline.
+Because the FBI Crime Data Explorer does not provide a stable API or direct CSV endpoint, the dataset cannot be programmatically retrieved. For reproducibility, the raw file must be downloaded manually following the steps above. The data is then processed using CrimeDataset.ipynb , which performs cleaning and outputs the final file crime_cleaned.csv used in the pipeline.
 
----
+
 
 ### 4. Verify data integrity (SHA-256 checksums)
 
@@ -194,7 +192,7 @@ Expected checksums:
 
 Both files must pass verification before continuing.
 
----
+
 
 ### 5. Run full pipeline 
 
@@ -209,18 +207,18 @@ This executes the full workflow:
 * dataset merging
 * analysis and visualization
 
----
+
 
 ### 6. Manual execution 
 
 If running step-by-step instead of Snakemake:
 
-* `CrimeDataset.ipynb` → cleans crime dataset
-* `EnvironmentDataset.ipynb` → explores AQI dataset
-* `merge.py` → merges datasets into `merged_aqi_crime.csv`
-* `analyze.py` → generates analysis outputs and visualizations
+* `CrimeDataset.ipynb`: cleans crime dataset
+* `EnvironmentDataset.ipynb` : explores AQI dataset
+* `merge.py` : merges datasets into `merged_aqi_crime.csv`
+* `analyze.py` : generates analysis outputs and visualizations
 
----
+
 
 ### Output files
 
@@ -232,7 +230,6 @@ After successful execution, the following files are generated:
 * `analysis_output.txt`
 * Visualization PNG files
 
----
 
 ## References
 
