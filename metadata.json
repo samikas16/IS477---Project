@@ -1,0 +1,77 @@
+
+{
+
+  "@context": "https://schema.org/",
+
+  "@type": "Dataset",
+
+  "name": "Air Quality vs. Crime Rates Across U.S. Cities (2024)",
+
+  "description": "City-level analysis integrating 2024 EPA annual AQI data by Core-Based Statistical Area with 2024 FBI UCR crime statistics to explore relationships between air quality and crime rates across U.S. cities.",
+
+  "url": "https://github.com/samikas16/IS477---Project",
+
+  "version": "1.0.0",
+
+  "datePublished": "2025",
+
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+
+  "creator": [
+
+    {
+
+      "@type": "Person",
+
+      "name": "Sreeja Nallamala + Samika Sripathi",
+
+      "affiliation": {
+
+        "@type": "Organization",
+
+        "name": "University of Illinois Urbana-Champaign"
+
+      }
+
+    }
+
+  ],
+
+  "keywords": ["air quality", "AQI", "crime", "urban data", "EPA", "FBI UCR", "2024"],
+
+  "temporalCoverage": "2024",
+
+  "spatialCoverage": {
+
+    "@type": "Place",
+
+    "name": "United States"
+
+  },
+
+  "isBasedOn": [
+
+    {
+
+      "@type": "Dataset",
+
+      "name": "EPA AQS Annual AQI by CBSA 2024",
+
+      "url": "https://aqs.epa.gov/aqsweb/airdata/download_data.html"
+
+    },
+
+    {
+
+      "@type": "Dataset",
+
+      "name": "FBI Crime Data Explorer 2024",
+
+      "url": "https://cde.ucr.cjis.gov/"
+
+    }
+
+  ]
+
+}
+
