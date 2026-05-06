@@ -195,6 +195,7 @@ snakemake --cores 1
 This executes the full workflow:
 
 * AQI download and extraction
+* AQI and crime data cleaning
 * checksum verification
 * dataset merging
 * analysis and visualization
