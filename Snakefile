@@ -24,6 +24,22 @@ with zipfile.ZipFile('{input}', 'r') as z:
         "
         """
 
+rule clean_aqi:
+    input:
+        "annual_aqi_by_cbsa_2024.csv"
+    output:
+        "annual_aqi_by_cbsa_2024_clean.csv"
+    shell:
+        "python3 clean_aqi.py --input {input} --out {output}"
+
+rule clean_crime:
+    input:
+        "CIUS_Table_8_Offenses_Known_to_Law_Enforcement_by_State_by_City_2024.xlsx"
+    output:
+        "crime_cleaned.csv"
+    shell:
+        "python3 clean_crime.py --input {input} --out {output}"
+
 rule verify:
     input:
         aqi="annual_aqi_by_cbsa_2024.csv",
