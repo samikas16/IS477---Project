@@ -1,0 +1,10 @@
+Building DAG of jobs...
+Deleting merged_aqi_crime.csv
+Deleting annual_aqi_by_cbsa_2024.csv
+Deleting annual_aqi_by_cbsa_2024.zip
+Deleting checksums_verified.txt
+Deleting analysis_output.txt
+Deleting plot1_aqi_violent.png
+Deleting plot2_aqi_property.png
+Deleting plot3_quartiles.png
+Deleting plot4_boxplot.png

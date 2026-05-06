@@ -1,0 +1,88 @@
+Assuming unrestricted shared filesystem usage.
+host: Sreejas-MacBook-Air-3.local
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+download_aqi        1
+extract_aqi         1
+merge               1
+verify              1
+analyze             1
+all                 1
+total               6
+
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May  5 15:20:30 2026]
+localrule download_aqi:
+    output: annual_aqi_by_cbsa_2024.zip
+    jobid: 3
+    reason: Forced execution
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+[Tue May  5 15:20:31 2026]
+Finished jobid: 3 (Rule: download_aqi)
+1 of 6 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May  5 15:20:31 2026]
+localrule extract_aqi:
+    input: annual_aqi_by_cbsa_2024.zip
+    output: annual_aqi_by_cbsa_2024.csv
+    jobid: 2
+    reason: Forced execution
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+[Tue May  5 15:20:31 2026]
+Finished jobid: 2 (Rule: extract_aqi)
+2 of 6 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May  5 15:20:31 2026]
+localrule verify:
+    input: annual_aqi_by_cbsa_2024.csv, crime_cleaned.csv
+    output: checksums_verified.txt
+    jobid: 4
+    reason: Forced execution
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+[Tue May  5 15:20:31 2026]
+Finished jobid: 4 (Rule: verify)
+3 of 6 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May  5 15:20:31 2026]
+localrule merge:
+    input: annual_aqi_by_cbsa_2024.csv, crime_cleaned.csv
+    output: merged_aqi_crime.csv
+    jobid: 1
+    reason: Forced execution
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+[Tue May  5 15:20:31 2026]
+Finished jobid: 1 (Rule: merge)
+4 of 6 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May  5 15:20:31 2026]
+localrule analyze:
+    input: merged_aqi_crime.csv
+    output: analysis_output.txt, plot1_aqi_violent.png, plot2_aqi_property.png, plot3_quartiles.png, plot4_boxplot.png
+    jobid: 5
+    reason: Forced execution
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+[Tue May  5 15:20:33 2026]
+Finished jobid: 5 (Rule: analyze)
+5 of 6 steps (83%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May  5 15:20:33 2026]
+localrule all:
+    input: merged_aqi_crime.csv, checksums_verified.txt, analysis_output.txt
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+[Tue May  5 15:20:33 2026]
+Finished jobid: 0 (Rule: all)
+6 of 6 steps (100%) done
+Complete log(s): /Users/sreejanallamala/Downloads/IS477---Project/.snakemake/log/2026-05-05T152028.212391.snakemake.log

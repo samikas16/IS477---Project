@@ -1,0 +1,48 @@
+Assuming unrestricted shared filesystem usage.
+host: Sreejas-MacBook-Air-3.local
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+analyze        1
+all            1
+total          2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May  5 01:46:44 2026]
+localrule analyze:
+    input: merged_aqi_crime.csv
+    output: analysis_output.txt, plot1_aqi_violent.png, plot2_aqi_property.png, plot3_quartiles.png, plot4_boxplot.png
+    jobid: 5
+    reason: Missing output files: analysis_output.txt
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+RuleException:
+CalledProcessError in file "/Users/sreejanallamala/Downloads/IS477---Project/Snakefile", line 70:
+Command 'set -euo pipefail;  python3 analyze.py --merged merged_aqi_crime.csv' returned non-zero exit status 1.
+[Tue May  5 01:46:44 2026]
+Error in rule analyze:
+    message: None
+    jobid: 5
+    input: merged_aqi_crime.csv
+    output: analysis_output.txt, plot1_aqi_violent.png, plot2_aqi_property.png, plot3_quartiles.png, plot4_boxplot.png
+    shell:
+        python3 analyze.py --merged merged_aqi_crime.csv
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue May  5 01:46:44 2026]
+Error in rule analyze:
+    message: None
+    jobid: 5
+    input: merged_aqi_crime.csv
+    output: analysis_output.txt, plot1_aqi_violent.png, plot2_aqi_property.png, plot3_quartiles.png, plot4_boxplot.png
+    shell:
+        python3 analyze.py --merged merged_aqi_crime.csv
+        (command exited with non-zero exit code)
+Complete log(s): /Users/sreejanallamala/Downloads/IS477---Project/.snakemake/log/2026-05-05T014642.967814.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

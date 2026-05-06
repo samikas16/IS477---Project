@@ -1,0 +1,19 @@
+ANALYSIS SUMMARY: AIR QUALITY VS CRIME (2024)
+
+Observations: 463
+
+Average Crime Rates by AQI Quartile:
+              violent_crime_rate  property_crime_rate
+aqi_quartile                                         
+Q1 (Best)             389.443501          2162.588343
+Q2                    406.413761          2130.731245
+Q3                    525.256559          2424.587478
+Q4 (Worst)            648.223714          2824.166963
+
+Top 5 Cities by Worst AQI:
+                                CBSA  Median AQI  violent_crime_rate  property_crime_rate
+Riverside-San Bernardino-Ontario, CA          97          571.210291          2776.988132
+         Phoenix-Mesa-Scottsdale, AZ          86          797.391684          2327.758123
+                     Bakersfield, CA          72          554.647698          2469.720273
+             Visalia-Porterville, CA          71          435.348073          2130.193716
+              San Diego-Carlsbad, CA          71          412.231898          1670.021540
