@@ -4,18 +4,24 @@ rule all:
         "checksums_verified.txt",
         "analysis_output.txt"
 
+<<<<<<< HEAD
 # -------------------
 # DOWNLOAD AQI ZIP
 # -------------------
+=======
+>>>>>>> 895b4985f68bd114f51d1c55050184322c12f7ae
 rule download_aqi:
     output:
         "annual_aqi_by_cbsa_2024.zip"
     shell:
         "python3 download_data.py"
 
+<<<<<<< HEAD
 # -------------------
 # EXTRACT AQI CSV
 # -------------------
+=======
+>>>>>>> 895b4985f68bd114f51d1c55050184322c12f7ae
 rule extract_aqi:
     input:
         "annual_aqi_by_cbsa_2024.zip"
@@ -30,9 +36,28 @@ with zipfile.ZipFile('{input}', 'r') as z:
         "
         """
 
+<<<<<<< HEAD
 # -------------------
 # VERIFY CHECKSUMS
 # -------------------
+=======
+rule clean_aqi:
+    input:
+        "annual_aqi_by_cbsa_2024.csv"
+    output:
+        "annual_aqi_by_cbsa_2024_clean.csv"
+    shell:
+        "python3 clean_aqi.py --input {input} --out {output}"
+
+rule clean_crime:
+    input:
+        "CIUS_Table_8_Offenses_Known_to_Law_Enforcement_by_State_by_City_2024.xlsx"
+    output:
+        "crime_cleaned.csv"
+    shell:
+        "python3 clean_crime.py --input {input} --out {output}"
+
+>>>>>>> 895b4985f68bd114f51d1c55050184322c12f7ae
 rule verify:
     input:
         aqi="annual_aqi_by_cbsa_2024.csv",
@@ -42,9 +67,12 @@ rule verify:
     shell:
         "python3 verify_checksums.py --aqi {input.aqi} --crime {input.crime}"
 
+<<<<<<< HEAD
 # -------------------
 # MERGE DATASETS
 # -------------------
+=======
+>>>>>>> 895b4985f68bd114f51d1c55050184322c12f7ae
 rule merge:
     input:
         aqi="annual_aqi_by_cbsa_2024.csv",
@@ -54,9 +82,12 @@ rule merge:
     shell:
         "python3 merge.py --aqi {input.aqi} --crime {input.crime} --out {output}"
 
+<<<<<<< HEAD
 # -------------------
 # ANALYSIS
 # -------------------
+=======
+>>>>>>> 895b4985f68bd114f51d1c55050184322c12f7ae
 rule analyze:
     input:
         "merged_aqi_crime.csv"
@@ -67,4 +98,8 @@ rule analyze:
         "plot3_quartiles.png",
         "plot4_boxplot.png"
     shell:
+<<<<<<< HEAD
         "python3 analyze.py --merged {input}"
+=======
+        "python3 analyze.py --merged {input}"
+>>>>>>> 895b4985f68bd114f51d1c55050184322c12f7ae

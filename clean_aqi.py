@@ -23,4 +23,7 @@ print(df.groupby("CBSA")["Median AQI"].mean().sort_values(ascending=False).head(
 print(df.groupby("CBSA")["Median AQI"].mean().sort_values(ascending=True).head())
 
 df.to_csv(args.out, index=False)
+<<<<<<< HEAD
 print(f"Saved to {args.out}")
+=======
+>>>>>>> 895b4985f68bd114f51d1c55050184322c12f7ae
