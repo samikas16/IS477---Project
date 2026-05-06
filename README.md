@@ -17,12 +17,16 @@ Our analysis found a relationship between air quality and crime. The cities were
 ### Dataset 1: EPA Annual AQI by CBSA (2024)
 
 **Source:** U.S. Environmental Protection Agency, Air Quality System (AQS)
+
 **URL:** https://aqs.epa.gov/aqsweb/airdata/download_files.html#Annual
+
 **File:** `annual_aqi_by_cbsa_2024.csv`
+
 **Format:** CSV
+
 **License:** Public domain (U.S. government work)
 
-The first dataset used in this project is the Environmental Protection Agency (EPA) air quality dataset titled “Annual AQI by CBSA (2024).” This dataset was loaded from a CSV file named **annual_aqi_by_cbsa_2024.csv**, which is stored in the project repository (`annual_aqi_by_cbsa_2024.csv`). The file is already in CSV format, which makes it easy to read and process using Python.
+The first dataset used in this project is the Environmental Protection Agency (EPA) air quality dataset titled “Annual AQI by CBSA (2024).” This dataset was loaded from a CSV file named annual_aqi_by_cbsa_2024.csv, which is stored in the project repository (`annual_aqi_by_cbsa_2024.csv`). The file is already in CSV format, which makes it easy to read and process using Python.
 
 In terms of structure, the dataset is organized in a clean tabular format with 501 rows and 18 columns. Each row represents a Core-Based Statistical Area (CBSA), which is essentially a metro area or region. The columns include variables such as the CBSA name, CBSA code, year, and multiple air quality measures. These measures include the number of “Good Days,” “Moderate Days,” and days in different unhealthy categories like “Unhealthy for Sensitive Groups,” “Unhealthy,” “Very Unhealthy,” and “Hazardous.” It also includes summary statistics like maximum AQI, median AQI, and the 90th percentile AQI. All columns are numeric except for the CBSA name, which is a categorical variable.
 
@@ -38,9 +42,13 @@ This dataset directly supports our research questions by allowing us to compare 
 ### Dataset 2: FBI UCR Offenses Known to Law Enforcement by State by City (2024)
 
 **Source:** Federal Bureau of Investigation, Crime Data Explorer
+
 **URL:** https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads
+
 **File:** `crime_cleaned.csv`
+
 **Format:** CSV (cleaned from original Excel)
+
 **License:** Public domain (U.S. government work)
 
 The second dataset used in this project is the FBI’s Uniform Crime Reporting (UCR) data titled “Offenses Known to Law Enforcement by State by City (2024).” This dataset was downloaded from the FBI Crime Data Explorer and then cleaned and saved as a CSV file named crime_cleaned.csv. In the project repository, this file is stored as `crime_cleaned.csv`. The original file was in Excel format, but it was converted to CSV after cleaning to make it easier to work with in Python.
