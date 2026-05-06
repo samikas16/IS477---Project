@@ -14,11 +14,6 @@ merged = merged[merged["population"] > 0].copy()
 merged["violent_crime_rate"] = (merged["violent_crime"] / merged["population"]) * 100000
 merged["property_crime_rate"] = (merged["property_crime"] / merged["population"]) * 100000
 
-<<<<<<< HEAD
-merged["aqi_quartile"] = pd.qcut(merged["Median AQI"], 4, labels=["Q1 (Best)", "Q2", "Q3", "Q4 (Worst)"])
-q_summary = merged.groupby("aqi_quartile")[["violent_crime_rate", "property_crime_rate"]].mean()
-top5 = merged[["CBSA", "Median AQI", "violent_crime_rate", "property_crime_rate"]].sort_values("Median AQI", ascending=False).head(5)
-=======
 merged["aqi_quartile"] = pd.qcut(
     merged["Median AQI"],
     4,
@@ -30,7 +25,6 @@ q_summary = merged.groupby("aqi_quartile")[["violent_crime_rate", "property_crim
 top5 = merged[["CBSA", "Median AQI", "violent_crime_rate", "property_crime_rate"]].sort_values(
     "Median AQI", ascending=False
 ).head(5)
->>>>>>> 895b4985f68bd114f51d1c55050184322c12f7ae
 
 with open("analysis_output.txt", "w") as f:
     f.write("ANALYSIS SUMMARY: AIR QUALITY VS CRIME (2024)\n\n")
@@ -71,8 +65,4 @@ plt.suptitle("")
 plt.xlabel("AQI Quartile")
 plt.ylabel("Good Days")
 plt.savefig("plot4_boxplot.png", bbox_inches="tight")
-<<<<<<< HEAD
 plt.close()
-=======
-plt.close()
->>>>>>> 895b4985f68bd114f51d1c55050184322c12f7ae

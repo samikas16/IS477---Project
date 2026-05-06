@@ -1,0 +1,62 @@
+Assuming unrestricted shared filesystem usage.
+host: Sreejas-MacBook-Air-3.local
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+clean_crime         1
+download_aqi        1
+extract_aqi         1
+merge               1
+verify              1
+analyze             1
+all                 1
+total               7
+
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May  5 20:51:23 2026]
+localrule clean_crime:
+    input: CIUS_Table_8_Offenses_Known_to_Law_Enforcement_by_State_by_City_2024.xlsx
+    output: crime_cleaned.csv
+    jobid: 4
+    reason: Forced execution
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+Select jobs to execute...
+[Tue May  5 20:51:24 2026]
+Finished jobid: 4 (Rule: clean_crime)
+1 of 7 steps (14%) done
+Execute 1 jobs...
+[Tue May  5 20:51:24 2026]
+localrule download_aqi:
+    output: annual_aqi_by_cbsa_2024.zip
+    jobid: 3
+    reason: Forced execution
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+RuleException:
+CalledProcessError in file "/Users/sreejanallamala/Downloads/IS477---Project/Snakefile", line 11:
+Command 'set -euo pipefail;  python3 download_data.py' returned non-zero exit status 1.
+[Tue May  5 20:51:24 2026]
+Error in rule download_aqi:
+    message: None
+    jobid: 3
+    output: annual_aqi_by_cbsa_2024.zip
+    shell:
+        python3 download_data.py
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue May  5 20:51:24 2026]
+Error in rule download_aqi:
+    message: None
+    jobid: 3
+    output: annual_aqi_by_cbsa_2024.zip
+    shell:
+        python3 download_data.py
+        (command exited with non-zero exit code)
+Complete log(s): /Users/sreejanallamala/Downloads/IS477---Project/.snakemake/log/2026-05-05T205122.351580.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

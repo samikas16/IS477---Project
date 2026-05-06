@@ -1,0 +1,3 @@
+SyntaxError in file "/Users/sreejanallamala/Downloads/IS477---Project/Snakefile", line 52:
+Command must be given as string after the shell keyword.:
+None

@@ -1,0 +1,89 @@
+Assuming unrestricted shared filesystem usage.
+host: Sreejas-MacBook-Air-3.local
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+clean_crime         1
+download_aqi        1
+extract_aqi         1
+merge               1
+verify              1
+analyze             1
+all                 1
+total               7
+
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May  5 20:54:42 2026]
+localrule clean_crime:
+    input: CIUS_Table_8_Offenses_Known_to_Law_Enforcement_by_State_by_City_2024.xlsx
+    output: crime_cleaned.csv
+    jobid: 4
+    reason: Forced execution
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+Select jobs to execute...
+[Tue May  5 20:54:44 2026]
+Finished jobid: 4 (Rule: clean_crime)
+1 of 7 steps (14%) done
+Execute 1 jobs...
+[Tue May  5 20:54:44 2026]
+localrule download_aqi:
+    output: annual_aqi_by_cbsa_2024.zip
+    jobid: 3
+    reason: Forced execution
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+[Tue May  5 20:54:44 2026]
+Finished jobid: 3 (Rule: download_aqi)
+2 of 7 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May  5 20:54:44 2026]
+localrule extract_aqi:
+    input: annual_aqi_by_cbsa_2024.zip
+    output: annual_aqi_by_cbsa_2024.csv
+    jobid: 2
+    reason: Forced execution
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+[Tue May  5 20:54:44 2026]
+Finished jobid: 2 (Rule: extract_aqi)
+3 of 7 steps (43%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue May  5 20:54:44 2026]
+localrule verify:
+    input: annual_aqi_by_cbsa_2024.csv, crime_cleaned.csv
+    output: checksums_verified.txt
+    jobid: 5
+    reason: Forced execution
+    resources: tmpdir=/var/folders/py/yhh4x__x569fvjmc099x_25m0000gn/T
+Select jobs to execute...
+RuleException:
+CalledProcessError in file "/Users/sreejanallamala/Downloads/IS477---Project/Snakefile", line 50:
+Command 'set -euo pipefail;  python3 verify_checksums.py --aqi annual_aqi_by_cbsa_2024.csv --crime crime_cleaned.csv' returned non-zero exit status 1.
+[Tue May  5 20:54:44 2026]
+Error in rule verify:
+    message: None
+    jobid: 5
+    input: annual_aqi_by_cbsa_2024.csv, crime_cleaned.csv
+    output: checksums_verified.txt
+    shell:
+        python3 verify_checksums.py --aqi annual_aqi_by_cbsa_2024.csv --crime crime_cleaned.csv
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue May  5 20:54:44 2026]
+Error in rule verify:
+    message: None
+    jobid: 5
+    input: annual_aqi_by_cbsa_2024.csv, crime_cleaned.csv
+    output: checksums_verified.txt
+    shell:
+        python3 verify_checksums.py --aqi annual_aqi_by_cbsa_2024.csv --crime crime_cleaned.csv
+        (command exited with non-zero exit code)
+Complete log(s): /Users/sreejanallamala/Downloads/IS477---Project/.snakemake/log/2026-05-05T205440.338738.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

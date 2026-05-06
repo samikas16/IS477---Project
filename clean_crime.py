@@ -34,7 +34,4 @@ state_summary = df.groupby("state")[["violent_crime", "property_crime"]].sum()
 print(state_summary.sort_values("violent_crime", ascending=False).head(10))
 
 df.to_csv(args.out, index=False)
-<<<<<<< HEAD
 print(f"Saved to {args.out}")
-=======
->>>>>>> 895b4985f68bd114f51d1c55050184322c12f7ae
