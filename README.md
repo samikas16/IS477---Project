@@ -135,7 +135,7 @@ Overall, this project taught us that merging real world datasets requires more t
 
 ```bash
 git clone <repo-url>
-cd IS477-Project
+cd IS477---Project
 ```
 
 ### 2. Install dependencies
