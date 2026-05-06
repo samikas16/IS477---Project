@@ -5,9 +5,8 @@ We use two datasets in this project:
 1. Air Quality Index (AQI) data (2024)
 2. FBI crime data (city-level)
 
-These are merged into a final dataset: `merged_aqi_crime.csv`.
+These are merged into a final dataset: merged_aqi_crime.csv.
 
----
 
 ## Dataset 1: AQI Data (`annual_aqi_by_cbsa_2024.csv`)
 
@@ -32,7 +31,6 @@ These are merged into a final dataset: `merged_aqi_crime.csv`.
 | Days PM2.5 | Days dominated by fine particulate matter |
 | Days PM10 | Days dominated by coarse particulate matter |
 
----
 
 ## Dataset 2: Crime Data (`crime_cleaned.csv`)
 
@@ -52,7 +50,6 @@ These are merged into a final dataset: `merged_aqi_crime.csv`.
 | motor_vehicle_theft | Number of vehicle thefts |
 | arson | Number of arson incidents |
 
----
 
 ## Derived Variables (Created in Analysis)
 
@@ -63,15 +60,4 @@ These are merged into a final dataset: `merged_aqi_crime.csv`.
 | property_crime_rate | Property crimes per 100,000 people |
 | aqi_quartile | AQI grouped into four categories (best to worst) |
 
----
-
-## Final Dataset: `merged_aqi_crime.csv`
-
-This dataset combines AQI and crime data using cleaned city names.
-
-Each row represents a city or metro area and includes:
-- air quality metrics
-- crime counts
-- population
-- derived crime rates
 
